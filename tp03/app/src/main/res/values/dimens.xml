@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_end">15dp</dimen>
+    <dimen name="padding_start">30dp</dimen>
+    <dimen name="body_text_size">18sp</dimen>
+    <dimen name="question_text_size">24sp</dimen>
+</resources>

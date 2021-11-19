@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/homeFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.StartFragment">
+
+        <TextView
+            android:id="@+id/homeTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="15dp"
+            android:paddingEnd="30dp"
+            android:text="@string/home_title"
+            android:textAlignment="textEnd"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.15" />
+
+        <TextView
+            android:id="@+id/homeSubtitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/padding_start"
+            android:paddingEnd="@dimen/padding_end"
+            android:text="@string/home_subtitle"
+            android:textAlignment="textEnd"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/homeTitleTextView"
+            app:layout_constraintVertical_bias="0.05" />
+
+        <TextView
+            android:id="@+id/homeBodyTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="15dp"
+            android:paddingEnd="30dp"
+            android:text="@string/home_body"
+            android:textAlignment="inherit"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/homeSubtitleTextView"
+            app:layout_constraintVertical_bias="0.176" />
+
+        <TextView
+            android:id="@+id/adviseTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="30dp"
+            android:paddingEnd="10dp"
+            android:text="@string/metodology"
+            android:textAlignment="textEnd"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/homeBodyTextView"
+            app:layout_constraintVertical_bias="0.176" />
+
+        <Button
+            android:id="@+id/beginButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/begin_quiz"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adviseTextView"
+            app:layout_constraintVertical_bias="0.588" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

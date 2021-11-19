@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="camell.oncase.investorprofileanalyzer.viewmodel.InvestorProfileViewModel" />
+        <variable
+            name="firstQuestionFragment"
+            type="camell.oncase.investorprofileanalyzer.fragments.FirstQuestionFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/firstQuestionFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.FirstQuestionFragment">
+
+        <TextView
+            android:id="@+id/firstQuestionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FirstQuestionFragment"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/firstQuestionRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/padding_start"
+            android:paddingEnd="@dimen/padding_end"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/firstQuestionTextView"
+            app:layout_constraintVertical_bias="0.20">
+
+            <RadioButton
+                android:id="@+id/firstQuestionRadioButtonA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="@{viewModel.punctuation.equals(0)}"
+                android:onClick="@{() -> viewModel.setPunctuation(0)}"
+                android:text="@string/first_question_choice_a"
+                android:textSize="@dimen/body_text_size" />
+
+            <RadioButton
+                android:id="@+id/firstQuestionRadioButtonB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="@{viewModel.punctuation.equals(2)}"
+                android:onClick="@{() -> viewModel.setPunctuation(2)}"
+                android:text="@string/first_question_choice_b"
+                android:textSize="@dimen/body_text_size" />
+
+            <RadioButton
+                android:id="@+id/firstQuestionRadioButtonC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="@{viewModel.punctuation.equals(3)}"
+                android:onClick="@{() -> viewModel.setPunctuation(3)}"
+                android:text="@string/first_question_choice_c"
+                android:textSize="@dimen/body_text_size" />
+
+            <RadioButton
+                android:id="@+id/firstQuestionRadioButtonD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="@{viewModel.punctuation.equals(4)}"
+                android:onClick="@{() -> viewModel.setPunctuation(4)}"
+                android:text="@string/first_question_choice_d"
+                android:textSize="@dimen/body_text_size" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/firstQuestionNextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/firstQuestionRadioGroup"
+            app:layout_constraintVertical_bias="0.2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

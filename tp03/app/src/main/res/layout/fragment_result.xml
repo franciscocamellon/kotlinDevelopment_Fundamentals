@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="camell.oncase.investorprofileanalyzer.viewmodel.InvestorProfileViewModel" />
+        <variable
+            name="resultFragment"
+            type="camell.oncase.investorprofileanalyzer.fragments.ResultFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/resultFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.ResultFragment">
+
+        <TextView
+            android:id="@+id/resultTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="15dp"
+            android:paddingEnd="30dp"
+            android:text="Perfil resultante"
+            android:textAlignment="textEnd"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.15" />
+
+        <TextView
+            android:id="@+id/resultBodyTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="30dp"
+            android:paddingEnd="15dp"
+            android:text="@{viewModel.punctuation.toString()}"
+            android:textAlignment="inherit"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/resultTitleTextView"
+            app:layout_constraintVertical_bias="0.2" />
+
+        <Button
+            android:id="@+id/reDoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/redo_quiz"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/resultBodyTextView"
+            app:layout_constraintVertical_bias="0.468" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

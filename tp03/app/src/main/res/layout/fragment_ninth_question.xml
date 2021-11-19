@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="camell.oncase.investorprofileanalyzer.viewmodel.InvestorProfileViewModel" />
+        <variable
+            name="ninthQuestionFragment"
+            type="camell.oncase.investorprofileanalyzer.fragments.NinthQuestionFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ninthFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.NinthQuestionFragment">
+
+        <TextView
+            android:id="@+id/ninthQuestionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/padding_start"
+            android:paddingEnd="@dimen/padding_end"
+            android:text="@string/ninth_question"
+            android:textColor="@color/black"
+            android:textSize="@dimen/question_text_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.17" />
+
+        <RadioGroup
+            android:id="@+id/ninthQuestionRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/padding_start"
+            android:paddingEnd="@dimen/padding_end"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ninthQuestionTextView"
+            app:layout_constraintVertical_bias="0.20">
+
+            <RadioButton
+                android:id="@+id/ninthQuestionRadioButtonA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="@{viewModel.punctuation.equals(0)}"
+                android:onClick="@{() -> viewModel.setPunctuation(0)}"
+                android:text="@string/ninth_question_choice_a"
+                android:textSize="@dimen/body_text_size" />
+
+            <RadioButton
+                android:id="@+id/ninthQuestionRadioButtonB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="@{viewModel.punctuation.equals(1)}"
+                android:onClick="@{() -> viewModel.setPunctuation(1)}"
+                android:text="@string/ninth_question_choice_b"
+                android:textSize="@dimen/body_text_size" />
+
+            <RadioButton
+                android:id="@+id/ninthQuestionRadioButtonC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="@{viewModel.punctuation.equals(2)}"
+                android:onClick="@{() -> viewModel.setPunctuation(2)}"
+                android:text="@string/ninth_question_choice_c"
+                android:textSize="@dimen/body_text_size" />
+
+            <RadioButton
+                android:id="@+id/ninthQuestionRadioButtonD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="@{viewModel.punctuation.equals(4)}"
+                android:onClick="@{() -> viewModel.setPunctuation(4)}"
+                android:text="@string/ninth_question_choice_d"
+                android:textSize="@dimen/body_text_size" />
+
+            <RadioButton
+                android:id="@+id/ninthQuestionRadioButtonE"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="@{viewModel.punctuation.equals(5)}"
+                android:onClick="@{() -> viewModel.setPunctuation(5)}"
+                android:text="@string/ninth_question_choice_e"
+                android:textSize="@dimen/body_text_size" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/ninthQuestionNextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/calculate"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ninthQuestionRadioGroup"
+            app:layout_constraintVertical_bias="0.2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
